@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .edit-task-container {
+            background-color: #ffccd5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 550px;
+            text-align: center;
+        }
+        .edit-task-container h2 {
+            margin-bottom: 20px;
+            color: #b0003a;
+        }
+        .edit-task-container input[type="text"],
+        .edit-task-container input[type="date"],
+        .edit-task-container select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ff99b6;
+            border-radius: 6px;
+            background-color: #fff5f8;
+        }
+        .edit-task-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #b0003a;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .edit-task-container button:hover {
+            background-color: #d50048;
+        }
+        .edit-task-container a {
+            display: block;
+            margin-top: 20px;
+            color: #b0003a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .edit-task-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-task-container">
+        <h2>Edit Task</h2>
+        <form action="/tasks/update/<%= task._id %>" method="POST">
+            <input type="text" name="title" value="<%= task.title %>" required>
+            <input type="text" name="category" value="<%= task.category %>" required>
+            <input type="date" name="deadline" value="<%= task.deadline.toISOString().split('T')[0] %>" required>
+            <select name="status">
+                <option value="pending" <%= task.status === "pending" ? "selected" : "" %>>Pending</option>
+                <option value="progress" <%= task.status === "progress" ? "selected" : "" %>>In Progress</option>
+                <option value="done" <%= task.status === "done" ? "selected" : "" %>>Done</option>
+            </select>
+            <button type="submit">Update Task</button>
+        </form>
+        <a href="/tasks">Back to Tasks</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+            width: 550px;
+            text-align: center;
+            position: relative;
+        }
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-size: 26px;
+            color: #d6336c;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 95%;
+            padding: 14px;
+            margin: 14px 0;
+            border: 1px solid #ffccd5;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 14px;
+            background-color: #d6336c;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #a61e4d;
+        }
+        .login-container p {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+        .login-container a {
+            color: #d6336c;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+        .cherry-image {
+            width: 110px;
+            position: absolute;
+            top: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Cherry_Stella444.jpg/1200px-Cherry_Stella444.jpg" alt="Cherry" class="cherry-image">
+        <h2>Login</h2>
+        <form action="/auth/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/auth/register">Register</a></p>
+    </div>
+</body>
+</html>
