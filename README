@@ -1,0 +1,81 @@
+# Student Task Manager
+
+Student Task Manager adalah aplikasi web yang memungkinkan pengguna untuk mengelola tugas-tugas mereka. Pengguna dapat mendaftar, login, membuat, mengedit, dan menghapus tugas.
+
+## Fitur di dalam aplikasi
+
+- Registrasi pengguna
+- Login pengguna
+- Logout pengguna
+- Membuat tugas baru
+- Melihat semua tugas
+- Mengedit tugas
+- Menghapus tugas
+
+## Teknologi yang Digunakan
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- EJS (Embedded JavaScript)
+- bcryptjs
+- jsonwebtoken
+- body-parser
+- cookie-parser
+- dotenv
+
+## Instalasi
+
+1. Clone repositori ini:
+
+    ```bash
+    git clone https://github.com/username/student-task-manager.git
+    cd student-task-manager
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Buat file [.env](http://_vscodecontentref_/0) di root direktori dan tambahkan variabel berikut:
+
+    ```env
+    JWT_SECRET=your_secret_key
+    ```
+
+4. Jalankan aplikasi:
+
+    ```bash
+    npm start
+    ```
+
+5. Buka browser dan akses `http://localhost:3000`
+
+## Struktur Direktori
+
+student-task-manager/
+├── config/
+│   └── database.js
+├── controllers/
+│   ├── authController.js
+│   └── taskController.js
+├── middleware/
+│   └── authMiddleware.js
+├── models/
+│   ├── task.js
+│   └── user.js
+├── routes/
+│   ├── authRoutes.js
+│   └── taskRoutes.js
+├── views/
+│   ├── editTask.ejs
+│   ├── login.ejs
+│   ├── register.ejs
+│   └── tasks.ejs
+├── .env
+├── app.js
+├── package.json
+└── package-lock.json
